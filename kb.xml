@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE VULNS SYSTEM "https://qualysapi.qualys.com/knowledgebase_download.dtd">
+<!-- This report was generated with an evaluation version of Qualys //--> 
+<VULNS>
+  <VULN>
+    <QID>100002</QID>
+    <VULN_TYPE>Vulnerability</VULN_TYPE>
+    <SEVERITY_LEVEL>5</SEVERITY_LEVEL>
+    <TITLE><![CDATA[Microsoft Internet Explorer Multiple Vulnerabilities (MS03-020)]]></TITLE>
+    <CATEGORY>Internet Explorer</CATEGORY>
+    <LAST_UPDATE><![CDATA[2009-06-17T08:32:07Z]]></LAST_UPDATE>
+    <BUGTRAQ_ID_LIST>
+      <BUGTRAQ_ID>
+        <ID><![CDATA[7539]]></ID>
+        <URL><![CDATA[http://www.securityfocus.com/bid/7539]]></URL>
+      </BUGTRAQ_ID>
+    </BUGTRAQ_ID_LIST>
+    <PATCHABLE>1</PATCHABLE>
+    <VENDOR_REFERENCE_LIST>
+      <VENDOR_REFERENCE>
+        <ID><![CDATA[MS03-020]]></ID>
+        <URL><![CDATA[http://www.microsoft.com/technet/security/Bulletin/MS03-020.mspx]]></URL>
+      </VENDOR_REFERENCE>
+    </VENDOR_REFERENCE_LIST>
+    <CVE_ID_LIST>
+      <CVE_ID>
+        <ID><![CDATA[CVE-2003-0344]]></ID>
+        <URL><![CDATA[http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0344]]></URL>
+      </CVE_ID>
+      <CVE_ID>
+        <ID><![CDATA[CVE-2003-0309]]></ID>
+        <URL><![CDATA[http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0309]]></URL>
+      </CVE_ID>
+    </CVE_ID_LIST>
+    <DIAGNOSIS><![CDATA[Object Tag Vulnerability: <BR>
+Microsoft Internet Explorer contains a boundary condition error in the handling of OBJECT tags within Web pages. The problem occurs when Internet Explorer determines the object type. If Internet Explorer is used to view a Web page containing an OBJECT tag with excessive data used for the type parameter, an internal memory buffer will be overrun. If the object type field includes extraneous &quot;/&quot; characters, Internet Explorer will convert the last &quot;/&quot; character to &quot;_/_&quot; after the string length is computed. This will allow a malicious attacker to corrupt sensitive stack memory with attacker-supplied values.
+<P>
+File Download Dialog Vulnerability:<BR>
+When a user clicks on a link to a file in Internet Explorer, a file download confirmation dialog is presented to the user to allow the user to save the file locally, open the file, or cancel the request. There is a flaw in Internet Explorer that can cause the application to open the file when a Web page opens multiple file download dialogs. Opening a downloaded file could allow an attacker to cause arbitrary code to run on a user's machine.]]></DIAGNOSIS>
+    <CONSEQUENCE><![CDATA[Object Tag Vulnerability: <BR>
+Succuccessfully exploits this vulnerability, then Internet Explorer could eessful exploitation could result in either Internet Explorer failing or the execution of arbitrary attacker-supplied code. Any code execution would occur in the security context of the current user.<BR>
+<P>
+File Download Dialog Vulnerability:<BR>
+If an attacker sxecute arbitrary code under the context of the logged on user.]]></CONSEQUENCE>
+    <SOLUTION><![CDATA[
+<P>Patch:<BR>
+Following are links for downloading patches to fix the vulnerabilities:
+<P> <A HREF="http://www.microsoft.com/windows/ie/ie6/downloads/critical/818529/default.mspx" TARGET="_blank">MS03-020: All version except Microsoft Internet Explorer 6.0 for Windows Server 2003</A><P> <A HREF="http://www.microsoft.com/windows/ie/ie6/downloads/critical/818529s/default.mspx" TARGET="_blank">MS03-020: Microsoft Internet Explorer 6.0 for Windows Server 2003</A>
+
+<P>Virtual Patches:<BR>
+<A HREF="http://www.trendmicro.com/vulnerabilitycontrols "TARGET="_blank">Trend Micro Virtual Patching</A><BR>
+Virtual Patch #1000548: Internet Explorer Object Type Overflow<BR>
+]]></SOLUTION>
+    <CORRELATION>
+      <EXPLOITABILITY>
+        <EXPLT_SRC>
+          <SRC_NAME><![CDATA[The Exploit-DB]]></SRC_NAME>
+          <EXPLT_LIST>
+            <EXPLT>
+              <REF><![CDATA[CVE-2003-0309]]></REF>
+              <DESC><![CDATA[Internet Explorer 5/6 file:// Request Zone Bypass Vulnerability - The Exploit-DB Ref : 22575]]></DESC>
+              <LINK><![CDATA[http://www.exploit-db.com/exploits/22575]]></LINK>
+            </EXPLT>
+            <EXPLT>
+              <REF><![CDATA[CVE-2003-0344]]></REF>
+              <DESC><![CDATA[Internet Explorer - Object Type (MS03-020) - The Exploit-DB Ref : 16581]]></DESC>
+              <LINK><![CDATA[http://www.exploit-db.com/exploits/16581]]></LINK>
+            </EXPLT>
+            <EXPLT>
+              <REF><![CDATA[CVE-2003-0344]]></REF>
+              <DESC><![CDATA[Microsoft Internet Explorer Object Tag Exploit (MS03-020) - The Exploit-DB Ref : 37]]></DESC>
+              <LINK><![CDATA[http://www.exploit-db.com/exploits/37]]></LINK>
+            </EXPLT>
+            <EXPLT>
+              <REF><![CDATA[CVE-2003-0344]]></REF>
+              <DESC><![CDATA[Microsoft Internet Explorer 5 OBJECT Tag Buffer Overflow Vulnerability - The Exploit-DB Ref : 22726]]></DESC>
+              <LINK><![CDATA[http://www.exploit-db.com/exploits/22726]]></LINK>
+            </EXPLT>
+          </EXPLT_LIST>
+        </EXPLT_SRC>
+        <EXPLT_SRC>
+          <SRC_NAME><![CDATA[Metasploit]]></SRC_NAME>
+          <EXPLT_LIST>
+            <EXPLT>
+              <REF><![CDATA[CVE-2003-0344]]></REF>
+              <DESC><![CDATA[MS03-020 Microsoft Internet Explorer Object Type - Metasploit Ref : /modules/exploit/windows/browser/ms03_020_ie_objecttype]]></DESC>
+              <LINK><![CDATA[http://www.metasploit.com/modules/exploit/windows/browser/ms03_020_ie_objecttype]]></LINK>
+            </EXPLT>
+          </EXPLT_LIST>
+        </EXPLT_SRC>
+      </EXPLOITABILITY>
+    </CORRELATION>
+    <CVSS_BASE>7.5</CVSS_BASE>
+    <CVSS_TEMPORAL>5.9</CVSS_TEMPORAL>
+  </VULN>
+</VULNS>
