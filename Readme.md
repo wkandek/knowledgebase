@@ -3,8 +3,11 @@ kb_exp.pl: reads kb.xml and outputs all QID that have exploits associated, uses 
 kb.xml: simple testfile with 1 QID
 
 Demo run:
+
 wkandek$ curl -o kb.xml -u qXXXXXX1 https://qualysapi.qg2.apps.qualys.com/msp/knowledgebase_download.php
+
 Enter host password for user 'qXXXXXX1':
+
    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current        
 100 93.3M    0 93.3M    0     0   186k      0 --:--:--  0:08:31 --:--:--  146k 
 
