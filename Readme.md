@@ -3,7 +3,7 @@ kb_exp.pl: reads kb.xml and outputs all QID that have exploits associated, uses 
 kb.xml: simple testfile with 1 QID
 
 Demo run:
-
+<pre><code>
 wkandek$ curl -o kb.xml -u qXXXXXX1 https://qualysapi.qg2.apps.qualys.com/msp/knowledgebase_download.php
 
 Enter host password for user 'qXXXXXX1':
@@ -25,3 +25,4 @@ wkandek$ tail -3 exploits.lst
 195410 
 115779 
 38429
+</code></pre>
